@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- WooCommerce Product Form View -->
+    <record id="view_woocommerce_product_form" model="ir.ui.view">
+        <field name="name">woocommerce.product.form</field>
+        <field name="model">woocommerce.product</field>
+        <field name="arch" type="xml">
+            <form string="WooCommerce Product">
+                <header>
+                    <button name="sync_to_woocommerce" string="Sync to WooCommerce" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Product Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="woo_id"/>
+                            <field name="product_id"/>
+                            <field name="sku"/>
+                            <field name="permalink" widget="url"/>
+                        </group>
+                        <group>
+                            <field name="status"/>
+                            <field name="price"/>
+                            <field name="regular_price"/>
+                            <field name="sale_price"/>
+                            <field name="stock_quantity"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Short Description">
+                            <field name="short_description"/>
+                        </page>
+                        <page string="Categories">
+                            <field name="categories" widget="many2many_tags"/>
+                        </page>
+                        <page string="Images">
+                            <field name="images">
+                                <list editable="bottom">
+                                    <field name="woo_id"/>
+                                    <field name="name"/>
+                                    <field name="src" widget="url"/>
+                                    <field name="alt"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- WooCommerce Product list View -->
+    <record id="view_woocommerce_product_list" model="ir.ui.view">
+        <field name="name">woocommerce.product.list</field>
+        <field name="model">woocommerce.product</field>
+        <field name="arch" type="xml">
+            <list string="WooCommerce Products">
+                <field name="woo_id"/>
+                <field name="name"/>
+                <field name="sku"/>
+                <field name="price"/>
+                <field name="stock_quantity"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- WooCommerce Product Search View -->
+    <record id="view_woocommerce_product_search" model="ir.ui.view">
+        <field name="name">woocommerce.product.search</field>
+        <field name="model">woocommerce.product</field>
+        <field name="arch" type="xml">
+            <search string="Search WooCommerce Products">
+                <field name="name"/>
+                <field name="woo_id"/>
+                <field name="sku"/>
+                <filter string="Published" name="published" domain="[('status', '=', 'publish')]"/>
+                <filter string="Draft" name="draft" domain="[('status', '=', 'draft')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="status" context="{'group_by': 'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- WooCommerce Product Action -->
+    <record id="action_woocommerce_product" model="ir.actions.act_window">
+        <field name="name">WooCommerce Products</field>
+        <field name="res_model">woocommerce.product</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_woocommerce_product_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new WooCommerce product or sync existing ones.
+            </p>
+        </field>
+    </record>
+
+    <!-- WooCommerce Config Form View -->
+    <record id="view_woocommerce_config_form" model="ir.ui.view">
+        <field name="name">woocommerce.config.form</field>
+        <field name="model">woocommerce.config</field>
+        <field name="arch" type="xml">
+            <form string="WooCommerce Configuration">
+                <header>
+                    <button name="test_connection" string="Test Connection" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Configuration Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="url" placeholder="https://yourstore.com"/>
+                            <field name="is_active"/>
+                        </group>
+                        <group>
+                            <field name="consumer_key" password="True"/>
+                            <field name="consumer_secret" password="True"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- WooCommerce Config list View -->
+    <record id="view_woocommerce_config_list" model="ir.ui.view">
+        <field name="name">woocommerce.config.list</field>
+        <field name="model">woocommerce.config</field>
+        <field name="arch" type="xml">
+            <list string="WooCommerce Configurations">
+                <field name="name"/>
+                <field name="url"/>
+                <field name="is_active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- WooCommerce Config Action -->
+    <record id="action_woocommerce_config" model="ir.actions.act_window">
+        <field name="name">WooCommerce Configuration</field>
+        <field name="res_model">woocommerce.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure your WooCommerce store connection.
+            </p>
+        </field>
+    </record>
+
+    <!-- WooCommerce Category Views -->
+    <record id="view_woocommerce_category_form" model="ir.ui.view">
+        <field name="name">woocommerce.category.form</field>
+        <field name="model">woocommerce.category</field>
+        <field name="arch" type="xml">
+            <form string="WooCommerce Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="woo_id"/>
+                        <field name="slug"/>
+                        <field name="parent_id"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_woocommerce_category_list" model="ir.ui.view">
+        <field name="name">woocommerce.category.list</field>
+        <field name="model">woocommerce.category</field>
+        <field name="arch" type="xml">
+            <list string="WooCommerce Categories">
+                <field name="name"/>
+                <field name="woo_id"/>
+                <field name="slug"/>
+                <field name="parent_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_woocommerce_category" model="ir.actions.act_window">
+        <field name="name">WooCommerce Categories</field>
+        <field name="res_model">woocommerce.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

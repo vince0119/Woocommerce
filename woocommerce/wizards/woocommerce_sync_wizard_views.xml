@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_woocommerce_sync_wizard_form" model="ir.ui.view">
+        <field name="name">woocommerce.sync.wizard.form</field>
+        <field name="model">woocommerce.sync.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Synchronize with WooCommerce">
+                <p class="text-muted">
+                    Synchronize your Odoo with WooCommerce. Select the entities you want to synchronize and the direction.
+                </p>
+                <group>
+                    <group>
+                        <field name="sync_products"/>
+                        <field name="sync_categories"/>
+                        <field name="sync_attributes"/>
+                    </group>
+                    <group>
+                        <field name="direction"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_sync" string="Synchronize" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- WooCommerce Sync Wizard Action -->
+    <record id="action_woocommerce_sync_wizard" model="ir.actions.act_window">
+        <field name="name">WooCommerce Synchronization</field>
+        <field name="res_model">woocommerce.sync.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

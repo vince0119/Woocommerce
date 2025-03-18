@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_woocommerce_root" name="WooCommerce" sequence="10"/>
+
+    <!-- Products Menu -->
+    <menuitem id="menu_woocommerce_products"
+              name="Products"
+              parent="menu_woocommerce_root"
+              action="action_woocommerce_product"
+              sequence="10"/>
+
+    <!-- Categories Menu -->
+    <menuitem id="menu_woocommerce_categories"
+              name="Categories"
+              parent="menu_woocommerce_root"
+              action="action_woocommerce_category"
+              sequence="20"/>
+
+    <!-- Synchronization Menu -->
+    <menuitem id="menu_woocommerce_sync"
+              name="Synchronization"
+              parent="menu_woocommerce_root"
+              action="action_woocommerce_sync_wizard"
+              sequence="30"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_woocommerce_config"
+              name="Configuration"
+              parent="menu_woocommerce_root"
+              action="action_woocommerce_config"
+              sequence="100"/>
+</odoo>
