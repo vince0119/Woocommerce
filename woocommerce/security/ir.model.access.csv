@@ -1,8 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_woocommerce_product_user,woocommerce.product.user,model_woocommerce_product,base.group_user,1,1,1,1
-access_woocommerce_product_image_user,woocommerce.product.image.user,model_woocommerce_product_image,base.group_user,1,1,1,1
-access_woocommerce_category_user,woocommerce.category.user,model_woocommerce_category,base.group_user,1,1,1,1
-access_woocommerce_config_user,woocommerce.config.user,model_woocommerce_config,base.group_user,1,1,1,1
-access_woocommerce_sync_wizard_user,woocommerce.sync.wizard.user,model_woocommerce_sync_wizard,base.group_user,1,1,1,1
-access_woocommerce_attribute_user,woocommerce.attribute.user,model_woocommerce_attribute,base.group_user,1,1,1,1
-access_woocommerce_attribute_value_user,woocommerce.attribute.value.user,model_woocommerce_attribute_value,base.group_user,1,1,1,1
+access_product_import_wizard,access_product_import_wizard,model_product_import_wizard,,1,1,1,1
+

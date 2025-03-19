@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_product_import_wizard" model="ir.ui.view">
+        <field name="name">product.import.wizard.form</field>
+        <field name="model">product.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Product from JSON">
+                <group>
+                    <field name="json_file" filename="filename"/>
+                </group>
+                <footer>
+                    <button name="import_json_data" type="object" string="Import" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_product_import" model="ir.actions.act_window">
+        <field name="name">Import Product</field>
+        <field name="res_model">product.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_product_import_root" name="Product Import" sequence="10"/>
+    <menuitem id="menu_product_import" name="Import Products" parent="menu_product_import_root" action="action_product_import"/>
+</odoo>
