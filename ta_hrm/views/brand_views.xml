@@ -1,0 +1,25 @@
+<odoo>
+
+    <record id="brand_list" model="ir.ui.view">
+        <field name="name">brand.list</field>
+        <field name="model">manage.brand</field>
+        <field name="arch" type="xml">
+            <list string="Brand">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_brand" model="ir.actions.act_window">
+        <field name="name">Brand</field>
+        <field name="res_model">manage.brand</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem
+        id="menu_brand"
+        name="Brand"
+        parent="sale.menu_sale_config"
+        action="action_brand"
+        sequence="25"/>
+</odoo>

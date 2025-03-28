@@ -1,0 +1,133 @@
+<odoo>
+
+    <record id="hr_kpi_form" model="ir.ui.view">
+        <field name="name">hr.kpi.form</field>
+        <field name="model">hr.kpi</field>
+        <field name="arch" type="xml">
+            <form string="KPI Setting">
+                <header>
+                    <button name="create_bonus_payslip_line"
+                            string="Create Bonus Payslip Line"
+                            type="object"
+                            class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="target" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="bonus"/>
+                            <field name="manage_brand_id"/>
+                            <field name="so_total_amount"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Sales Orders" name="sales_orders">
+                            <field name="so_line_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="date_order"/>
+                                    <field name="amount_total" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_kpi_kanban" model="ir.ui.view">
+        <field name="name">hr.kpi.kanban</field>
+        <field name="model">hr.kpi</field>
+        <field name="arch" type="xml">
+            <kanban class="o_hr_kpi_kanban" sample="1">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="target"/>
+                <field name="manage_brand_id"/>
+                <field name="bonus"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_content">
+                                <!-- Header with Name -->
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_title">
+                                        <strong><field name="name"/></strong>
+                                    </div>
+                                </div>
+
+                                <!-- Main Content -->
+                                <div class="o_kanban_record_body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="o_kanban_record_subtitle">
+                                                <i class="fa fa-user" title="Employee"/>
+                                                <field name="employee_id"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="o_kanban_record_subtitle">
+                                                <i class="fa fa-building" title="Brand"/>
+                                                <field name="manage_brand_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Target Progress -->
+                                    <div class="o_kanban_record_bottom mt8">
+                                        <div class="oe_kanban_bottom_left">
+                                            <b>Target:</b>
+                                            <field name="target" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Footer with Bonus -->
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_right">
+                                        <b>Bonus:</b>
+                                        <field name="bonus" widget="monetary" options="{'currency_field': 'company_currency_id'}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- View cho KPI -->
+    <record id="hr_kpi_list" model="ir.ui.view">
+        <field name="name">hr.kpi.list</field>
+        <field name="model">hr.kpi</field>
+        <field name="arch" type="xml">
+            <list string="KPI Settings">
+                <field name="name"/>
+                <field name="target" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="employee_id"/>
+                <field name="bonus"/>
+                <field name="manage_brand_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Menu Actions -->
+    <record id="action_hr_kpi" model="ir.actions.act_window">
+        <field name="name">KPI</field>
+        <field name="res_model">hr.kpi</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+    <menuitem 
+        id="menu_kpi"
+        name="KPI Management" 
+        parent="hr.menu_hr_root"
+        action="action_hr_kpi"
+        sequence="20"/>
+</odoo>

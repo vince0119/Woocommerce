@@ -1,0 +1,14 @@
+<odoo>
+
+    <record id="view_order_form_brand_inherit_tada" model="ir.ui.view">
+        <field name="name">sale.order.form.brand.inherit.tada</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="replace">
+                <field name="employee_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
