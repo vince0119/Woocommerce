@@ -1,0 +1,9 @@
+<odoo>
+    <record id="seq_warranty_request" model="ir.sequence">
+        <field name="name">Warranty Request Sequence</field>
+        <field name="code">warranty.request</field>
+        <field name="prefix">WAP</field>
+        <field name="padding">4</field>
+        <field name="number_increment">1</field>
+    </record>
+</odoo>

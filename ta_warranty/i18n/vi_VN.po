@@ -1,0 +1,339 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ta_warranty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-08 08:38+0000\n"
+"PO-Revision-Date: 2025-04-08 08:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ta_warranty
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_users_form_inherit_token
+msgid "API Access"
+msgstr "API truy cập"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__user_id
+msgid "API User"
+msgstr "API người dùng"
+
+#. module: ta_warranty
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_warranty_request_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request__state__cancel
+msgid "Cancelled"
+msgstr "Hủy"
+
+#. module: ta_warranty
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_warranty_request_form
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request__state__confirmed
+msgid "Confirmed"
+msgstr "Xác nhận"
+
+#. module: ta_warranty
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_warranty_serial_registration_list
+msgid "Create Warranty Request"
+msgstr "Tạo yêu cầu bảo hành"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_serial_registration__state__created
+msgid "Created"
+msgstr "Đã tạo"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking_barcode__create_uid
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__create_uid
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__create_uid
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking_barcode__create_date
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__create_date
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__create_date
+msgid "Created on"
+msgstr "Được tạo vào"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__partner_id
+msgid "Customer"
+msgstr "Khách hàng"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__damage_level
+msgid "Damage Level"
+msgstr "Mức độ hư hỏng"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__create_date
+msgid "Date Created"
+msgstr "Ngày tạo"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__delivery_id
+msgid "Delivery Order"
+msgstr "Đơn giao hàng"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking_barcode__display_name
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__display_name
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__display_name
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request__state__draft
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_serial_registration__state__draft
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: ta_warranty
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_users_form_inherit_token
+msgid "Generate Token"
+msgstr "Tạo token"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request_line__damage_level__heavy
+msgid "Heavy"
+msgstr "Nặng"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking_barcode__id
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__id
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__id
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__id
+msgid "ID"
+msgstr ""
+
+#. module: ta_warranty
+#: model:ir.model,name:ta_warranty.model_stock_route
+msgid "Inventory Routes"
+msgstr "Tuyến cung ứng tồn kho"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking_barcode__write_uid
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__write_uid
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__write_uid
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking_barcode__write_date
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__write_date
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__write_date
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request_line__damage_level__light
+msgid "Light"
+msgstr "Nhẹ"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request_line__damage_level__medium
+msgid "Medium"
+msgstr "Bình thường"
+
+#. module: ta_warranty
+#. odoo-python
+#: code:addons/ta_warranty/models/warranty_serial_registration.py:0
+msgid "No matching barcodes found for selected serial numbers"
+msgstr "Không tìm thấy số seri này trong số seri của sản phẩm"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking_barcode__product_id
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__product_id
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__line_ids
+msgid "Products"
+msgstr "Sản phẩm"
+
+#. module: ta_warranty
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_users_form_inherit_token
+msgid "Regenerate Token"
+msgstr "Tạo lại token"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request__state__requested
+msgid "Requested"
+msgstr "Chờ duyệt"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__return_picking_count
+#: model:ir.model.fields.selection,name:ta_warranty.selection__stock_route__type__return
+msgid "Return"
+msgstr "Trả hàng"
+
+#. module: ta_warranty
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_warranty_request_form
+msgid "Return Picking"
+msgstr "Tạo phiếu bảo hành"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request__state__returned
+msgid "Returned"
+msgstr "Đã tạo phiếu bảo hành"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_route__type
+msgid "Route Type"
+msgstr "Loại tuyến cung ứng"
+
+#. module: ta_warranty
+#: model:ir.model,name:ta_warranty.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Dòng đơn bán hàng"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__stock_route__type__scrap
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request_line__warranty_type__scrap
+msgid "Scrap"
+msgstr "Phế liệu"
+
+#. module: ta_warranty
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_warranty_request_form
+msgid "Send Request"
+msgstr "Gửi yêu cầu"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__seri
+msgid "Seri Number"
+msgstr "Số seri"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__serial_registration_id
+msgid "Serial Registration"
+msgstr "Số seri đăng ký"
+
+#. module: ta_warranty
+#: model:ir.actions.act_window,name:ta_warranty.action_warranty_serial_registration
+#: model:ir.ui.menu,name:ta_warranty.menu_warranty_serial_registration
+msgid "Serial Registrations"
+msgstr "Số seri đăng ký"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__sale_id
+msgid "Source Document"
+msgstr "Tài liệu nguồn"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__state
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_serial_registration__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking_barcode__picking_id
+msgid "Stock Picking"
+msgstr ""
+
+#. module: ta_warranty
+#. odoo-python
+#: code:addons/ta_warranty/models/warranty_serial_registration.py:0
+msgid "Success"
+msgstr "Thành công"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_res_users__token_seri
+msgid "Token For Serial"
+msgstr "Token cho số seri"
+
+#. module: ta_warranty
+#: model:ir.model,name:ta_warranty.model_stock_picking
+msgid "Transfer"
+msgstr "Lệnh chuyển hàng"
+
+#. module: ta_warranty
+#: model:ir.model,name:ta_warranty.model_res_users
+msgid "User"
+msgstr "Người dùng"
+
+#. module: ta_warranty
+#. odoo-python
+#: code:addons/ta_warranty/models/warranty_serial_registration.py:0
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#. module: ta_warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__stock_route__type__warranty
+#: model:ir.model.fields.selection,name:ta_warranty.selection__warranty_request_line__warranty_type__warranty
+#: model:ir.ui.menu,name:ta_warranty.menu_warranty_root
+msgid "Warranty"
+msgstr "Bảo hành"
+
+#. module: ta_warranty
+#: model:res.groups,name:ta_warranty.group_warranty_employee
+msgid "Warranty Employee"
+msgstr "Nhân viên"
+
+#. module: ta_warranty
+#: model:res.groups,name:ta_warranty.group_warranty_manager
+msgid "Warranty Manager"
+msgstr "Quản lý"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__warranty_qty
+msgid "Warranty Quantity"
+msgstr "Số lượng"
+
+#. module: ta_warranty
+#: model:ir.model,name:ta_warranty.model_warranty_request
+#: model:ir.model.fields,field_description:ta_warranty.field_stock_picking__warranty_request_id
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__warranty_id
+#: model_terms:ir.ui.view,arch_db:ta_warranty.view_warranty_request_form
+msgid "Warranty Request"
+msgstr "Yêu cầu bảo hành"
+
+#. module: ta_warranty
+#: model:ir.model,name:ta_warranty.model_warranty_request_line
+msgid "Warranty Request Line"
+msgstr "Dòng yêu cầu bảo hành"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request__name
+msgid "Warranty Request No."
+msgstr "Số"
+
+#. module: ta_warranty
+#: model:ir.actions.act_window,name:ta_warranty.action_warranty_request
+#: model:ir.ui.menu,name:ta_warranty.menu_warranty_requests
+msgid "Warranty Requests"
+msgstr "Yêu cầu bảo hành"
+
+#. module: ta_warranty
+#: model:ir.model,name:ta_warranty.model_warranty_serial_registration
+msgid "Warranty Serial Registration"
+msgstr "Đăng ký số seri"
+
+#. module: ta_warranty
+#: model:ir.model.fields,field_description:ta_warranty.field_warranty_request_line__warranty_type
+msgid "Warranty Type"
+msgstr "Loại bảo hành"
+
+#. module: ta_warranty
+#. odoo-python
+#: code:addons/ta_warranty/models/warranty_serial_registration.py:0
+msgid "Warranty requests created successfully"
+msgstr "Yêu cầu bảo hành tạo thành công"

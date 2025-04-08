@@ -1,0 +1,75 @@
+<odoo>
+    <record id="view_warranty_request_form" model="ir.ui.view">
+        <field name="name">warranty.request.form</field>
+        <field name="model">warranty.request</field>
+        <field name="arch" type="xml">
+            <form string="Warranty Request">
+                <header>
+                    <field name="state"  widget="statusbar" statusbar_visible="draft,requested,confirmed,returned,cancel"/>
+                    <button name="action_request" string="Send Request"
+                            type="object" class="btn-primary" groups="ta_warranty.group_warranty_employee"
+                            invisible="state != 'draft, cancel'"/>
+                    <button name="action_confirm" string="Confirm"
+                            type="object" class="btn-primary" groups="ta_warranty.group_warranty_manager"
+                            invisible="state != 'requested'"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="btn-danger"/>
+                    <button name="action_create_return_picking" string="Return Picking"
+                            type="object" class="btn-primary"
+                            invisible="state != 'confirmed'"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_return_pickings"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-truck">
+                            <field name="return_picking_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="sale_id" readonly="1"/>
+                        <field name="partner_id" readonly="1"/>
+                        <field name="delivery_id"/>
+                    </group>
+                    <field name="line_ids">
+                        <list editable="bottom">
+                            <field name="product_id"/>
+                            <field name="warranty_qty"/>
+                            <field name="damage_level" widget="selection"/>
+                            <field name="warranty_type" widget="selection"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_warranty_request_list" model="ir.ui.view">
+        <field name="name">warranty.request.list</field>
+        <field name="model">warranty.request</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="delivery_id"/>
+                <field name="sale_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <field name="create_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_warranty_request" model="ir.actions.act_window">
+        <field name="name">Warranty Requests</field>
+        <field name="res_model">warranty.request</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_warranty_root" name="Warranty" sequence="10"/>
+
+    <menuitem id="menu_warranty_requests"
+              name="Warranty Requests"
+              parent="menu_warranty_root"
+              action="action_warranty_request"
+              sequence="20"/>
+</odoo>

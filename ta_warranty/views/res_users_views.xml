@@ -1,0 +1,18 @@
+<odoo>
+    <record id="view_users_form_inherit_token" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.token</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//notebook" position="inside">
+                <page string="API Access" name="api_access">
+                    <group>
+                        <field name="token_seri"/>
+                        <button string="Generate Token" name="generate_api_token" type="object" class="oe_highlight"/>
+                        <button string="Regenerate Token" name="generate_api_token" type="object" class="btn-secondary"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
