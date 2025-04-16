@@ -29,13 +29,16 @@ class ApiController(http.Controller):
                 response = {"success": False, "message": "Serial number does not match any valid barcode"}
                 return Response(json.dumps(response), content_type='application/json', status=400)
 
+            sale_order = matching_barcode.picking_id.sale_id
             existing = request.env['warranty.serial.registration'].sudo().search([('seri', '=', seri)], limit=1)
             is_duplicate = bool(existing)
 
             serial_reg = request.env['warranty.serial.registration'].sudo().create({
                 'seri': seri,
                 'user_id': api_user.id,
-                'create_date': Datetime.now()
+                'create_date': Datetime.now(),
+                'order_id': sale_order.id if sale_order else False,
+                'product_id': matching_barcode.product_id.id
             })
 
             response = {

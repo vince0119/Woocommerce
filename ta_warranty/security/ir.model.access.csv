@@ -4,4 +4,6 @@ access_warranty_request_manager,warranty.request,model_warranty_request,group_wa
 access_warranty_request_line,warranty.request.line,model_warranty_request_line,,1,1,1,1
 access_warranty_serial_registration_user,warranty.serial.registration user,model_warranty_serial_registration,base.group_user,1,1,1,1
 access_warranty_serial_registration_admin,warranty.serial.registration admin,model_warranty_serial_registration,base.group_system,1,1,1,1
+access_warranty_serial_missing_wizard,warranty.serial.missing.wizard,model_warranty_serial_missing_wizard,base.group_user,1,1,1,1
+access_warranty_serial_missing_line,warranty.serial.missing.line,model_warranty_serial_missing_line,base.group_user,1,1,1,1
 access_stock_picking_barcode_user,Stock Picking Barcode User,model_stock_picking_barcode,base.group_user,1,1,1,1

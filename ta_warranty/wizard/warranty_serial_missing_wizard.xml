@@ -1,0 +1,25 @@
+<odoo>
+    <record id="warranty_serial_missing_wizard_view" model="ir.ui.view">
+        <field name="name">warranty.serial.missing.wizard.form</field>
+        <field name="model">warranty.serial.missing.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Missing Serial Numbers">
+                <field name="selected_ids" invisible="1"/>
+                <field name="order_id" invisible="1"/>
+                <field name="missing_line_ids" nolabel="1">
+                    <list editable="bottom" create="false" delete="false">
+                        <field name="serial_id" invisible="1"/>
+                        <field name="seri"/>
+                        <field name="product_id"/>
+                        <field name="selected" widget="boolean_toggle"/>
+                    </list>
+                </field>
+                <footer>
+                    <button name="action_process" string="Include All" type="object" class="btn-primary"/>
+                    <button name="action_skip" string="Continue with Selected" type="object" class="btn-secondary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

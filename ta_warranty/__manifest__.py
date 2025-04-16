@@ -13,7 +13,8 @@
         'views/res_users_views.xml',
         'views/warranty_serial_registration_views.xml',
 
-
-        'data/sequence.xml'
+        'data/sequence.xml',
+        
+        'wizard/warranty_serial_missing_wizard.xml',
     ],
 }
