@@ -29,6 +29,16 @@ class ApiController(http.Controller):
                 response = {"success": False, "message": "Serial number does not match any valid barcode"}
                 return Response(json.dumps(response), content_type='application/json', status=400)
 
+            lot_id = False
+            if matching_barcode.picking_id:
+                move_lines = request.env['stock.move.line'].sudo().search([
+                    ('picking_id', '=', matching_barcode.picking_id.id),
+                    ('product_id', '=', matching_barcode.product_id.id)
+                ])
+                if move_lines:
+                    # Lấy lot_id từ move_line đầu tiên phù hợp
+                    lot_id = move_lines[0].lot_id.id if move_lines[0].lot_id else False
+
             sale_order = matching_barcode.picking_id.sale_id
             existing = request.env['warranty.serial.registration'].sudo().search([('seri', '=', seri)], limit=1)
             is_duplicate = bool(existing)
@@ -38,7 +48,8 @@ class ApiController(http.Controller):
                 'user_id': api_user.id,
                 'create_date': Datetime.now(),
                 'order_id': sale_order.id if sale_order else False,
-                'product_id': matching_barcode.product_id.id
+                'product_id': matching_barcode.product_id.id,
+                'lot_id': lot_id
             })
 
             response = {

@@ -7,7 +7,9 @@ class StockRoute(models.Model):
     type = fields.Selection([
         ('warranty', 'Warranty'),
         ('scrap', 'Scrap'),
-        ('return', 'Return')], string="Route Type")
+        ('return', 'Return'),
+        ('delivery', 'Delivery'),
+        ('refund', 'Refund')], string="Route Type")
 
 
 class StockPicking(models.Model):

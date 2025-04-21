@@ -3,15 +3,14 @@
         <field name="name">warranty.serial.registration.list</field>
         <field name="model">warranty.serial.registration</field>
         <field name="arch" type="xml">
-            <list>
+            <list editable="bottom">
                 <header>
                     <button name="action_create_warranty_request" string="Create Warranty Request" type="object" class="oe_highlight"/>
-<!--                    <button name="action_add_more_serials" string="Add More" type="object" class="btn-primary"/>-->
-<!--                    <button name="action_skip_serials" string="Skip" type="object" class="btn-secondary"/>-->
                 </header>
                 <field name="seri"/>
                 <field name="order_id"/>
                 <field name="product_id"/>
+                <field name="lot_id"/>
                 <field name="create_date"/>
                 <field name="state"/>
             </list>
