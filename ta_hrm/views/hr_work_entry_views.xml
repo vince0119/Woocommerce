@@ -1,0 +1,12 @@
+<odoo>
+    <record id="hr_work_entry_view_form_inherit_custom" model="ir.ui.view">
+        <field name="name">hr.work.entry.form.inherit.custom</field>
+        <field name="model">hr.work.entry</field>
+        <field name="inherit_id" ref="hr_work_entry.hr_work_entry_view_form"/>
+        <field name="arch" type="xml">
+            <field name="work_entry_type_id" position="after">
+                <field name="cont_bonus" invisible="can_edit_cont_bonus != True"/>
+            </field>
+        </field>
+    </record>
+</odoo>

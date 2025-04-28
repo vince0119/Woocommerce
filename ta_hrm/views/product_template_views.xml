@@ -11,4 +11,15 @@
         </field>
     </record>
 
+    <record id="product_product_brand_inherit" model="ir.ui.view">
+        <field name="name">product.product.brand.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <field name="categ_id" position="after">
+                <field name="manage_brand_id"/>
+            </field>
+        </field>
+    </record>
+
 </odoo>

@@ -65,7 +65,7 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="menu_warranty_root" name="Warranty" sequence="10"/>
+    <menuitem id="menu_warranty_root" name="Warranty" sequence="10" groups="ta_warranty.group_warranty_employee,ta_warranty.group_warranty_manager"/>
 
     <menuitem id="menu_warranty_requests"
               name="Warranty Requests"
