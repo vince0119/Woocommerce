@@ -5,18 +5,19 @@ from odoo import models, fields, api
 class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
 
-    def compute_kpi_bonus(self):
-        self.ensure_one()
+    def is_porter_manager(self):
+        employee = self.employee_id
+        department = employee.department_id
+        return bool(department and department.name == "Porter" and department.manager_id == employee)
 
+    def compute_kpi_bonus(self):
         kpi_total_amount = 0
         employee = self.employee_id
         department = employee.department_id
         if not department:
             return 0
 
-        # Map ngày -> [danh sách nhân viên đi làm hôm đó]
         date_employee_work = defaultdict(set)
-        # Map ngày -> tổng số cont_bonus hôm đó
         date_cont_bonus = {}
 
         # Lấy tất cả work entries của nhân viên trong khoảng thời gian payslip
