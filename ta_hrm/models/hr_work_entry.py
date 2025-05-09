@@ -31,6 +31,8 @@ class HrWorkEntry(models.Model):
                         work_entries_to_update = self.env['hr.work.entry'].search([
                             ('employee_id.department_id', '=', department.id),
                             ('id', '!=', work_entry.id),
+                            ('date_start', '=', work_entry.date_start),
+                            ('date_stop', '=', work_entry.date_stop),
                         ])
                         work_entries_to_update.sudo().with_context(no_sync=True).write(
                             {'cont_bonus': vals['cont_bonus']})
