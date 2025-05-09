@@ -1,0 +1,13 @@
+<odoo>
+    <record id="sale_achievement_report_view_list_inherit" model="ir.ui.view">
+        <field name="name">sale.commission.achievement.report.view.list.inherit</field>
+        <field name="model">sale.commission.achievement.report</field>
+        <field name="inherit_id" ref="sale_commission.sale_achievement_report_view_list"/>
+        <field name="arch" type="xml">
+            <field name="achieved" position="after">
+                <field name="amount"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

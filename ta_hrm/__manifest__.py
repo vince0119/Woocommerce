@@ -12,5 +12,9 @@
         'views/product_template_views.xml',
         'views/brand_views.xml',
         'views/hr_work_entry_views.xml',
+        'views/sale_commission_views.xml',
+        'views/commission_summary_views.xml',
+
+        'report/achievement_report.xml',
     ],
 }

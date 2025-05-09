@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hr_kpi,access_hr_kpi,model_hr_kpi,base.group_user,1,1,1,1
 access_manage_brand,access_manage_brand,model_manage_brand,base.group_user,1,1,1,1
 access_kpi_so_line,access_kpi_so_line,model_kpi_so_line,base.group_user,1,1,1,1
+access_commission_summary,access_commission_summary,model_commission_summary,base.group_user,1,1,1,1

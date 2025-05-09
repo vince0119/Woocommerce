@@ -1,0 +1,17 @@
+<odoo>
+    <!-- Inherit Sale Commission Plan Form View -->
+    <record id="sale_commission_plan_form_view_inherit" model="ir.ui.view">
+        <field name="name">sale.commission.plan.form.inherit</field>
+        <field name="model">sale.commission.plan</field>
+        <field name="inherit_id" ref="sale_commission.sale_commission_plan_view_form"/>
+        <field name="arch" type="xml">
+            <field name="commission_amount" position="after">
+                <field name="target_mode" invisible="type != 'target'"/>
+            </field>
+            <xpath expr="//notebook//page//field[@name='target_ids']//list//field[@name='amount']" position="replace">
+                <field name="amount" column_invisible="parent.target_mode == 'quantity'"/>
+                <field name="min_qty" column_invisible="parent.target_mode != 'quantity'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
