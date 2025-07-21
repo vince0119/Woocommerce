@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_stock_card_line_tree" model="ir.ui.view">
+        <field name="name">Stock Card Line</field>
+        <field name="model">stock.card.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="stock_card_id" column_invisible="1"/>
+                <field name="sequence" widget="handle"/>
+                <button name="account_stock_card.stock_card_line_purchase" type="Object" icon="fa-dollar"/>
+                <button name="account_stock_card.stock_picking_in" type="Object" icon="fa-arrow-down"/>
+                <button name="account_stock_card.stock_picking_out" type="Object" icon="fa-arrow-up"/>
+                <button name="account_stock_card.stock_card_line_pickings" type="Object" icon="fa-truck"/>
+                <button name="account_stock_card.stock_card_line_sm" type="Object" icon="fa-edit"/>
+                <field name="name" column_invisible="1"/>
+                <field name="location_id" string="Location" options="{&quot;no_create&quot;:true}"/>
+                <field name="category_id" string="Category" options="{&quot;no_create&quot;:true}"/>
+                <field name="product_tmpl_id" string="Product Tmpl ID" column_invisible="1"/>
+                <field name="product_id" string="Product" options="{&quot;no_create&quot;:true}"/>
+                <field name="uom_id" string="UOM"/>
+                <field name="qty_start" string="Qty Start" sum="Sum of Qty Start" class="table-info"/>
+                <field name="val_start" string="Val Start" sum="Sum of Val Start" class="table-info"/>
+                <field name="qty_in" string="Qty In" sum="Sum of Qty In" class="table-success"/>
+                <field name="val_in" string="Val In" sum="Sum of Val In" class="table-success"/>
+                <field name="qty_out" string="Qty Out" sum="Sum of Qty Out" class="table-danger"/>
+                <field name="val_out" string="Val Out" sum="Sum of Val Out" class="table-danger"/>
+                <field name="qty_end" string="Qty End" sum="Sum of Qty End" class="table-dark"/>
+                <field name="val_end" string="Val End" sum="Sum of Val End" class="table-dark"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_stock_card_line" model="ir.actions.act_window">
+        <field name="name">Stock Card Line</field>
+        <field name="res_model">stock.card.line</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>

@@ -1,0 +1,80 @@
+<odoo>
+    <record id="view_stock_card_tree" model="ir.ui.view">
+        <field name="name">Stock Card</field>
+        <field name="model">stock.card</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="start_date" />
+                <field name="end_date" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_refresh_action" model="ir.actions.server">
+        <field name="name">Refresh Stock Card</field>
+        <field name="model_id" ref="model_stock_card"/>
+        <field name="binding_model_id" ref="model_stock_card"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.refreshReport()
+        </field>
+    </record>
+
+    <record id="view_stock_card_form" model="ir.ui.view">
+        <field name="name">Stock Card</field>
+        <field name="model">stock.card</field>
+        <field name="arch" type="xml">
+            <form string="Stock Card">
+                <header>
+                    <button name="%(action_refresh_action)d" type="action" string="Refresh"/>
+                    <field widget="statusbar" options="{'clickable': '1'}" name="state"/>
+                </header>
+                <sheet string="Stock Card">
+                    <div name="button_box" class="oe_button_box">
+                        <button class="oe_stat_button" icon="fa-pie-chart" type="object" name="action_open_stock_card_line">
+                            <field widget="statinfo" name="stock_card_line_count" string="Lines"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" text="Archived" bg_color="bg-danger" invisible="active"/>
+                    <field name="active" invisible="1"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="start_date" string="Start Date"/>
+                            <field name="end_date" string="End Date"/>
+                            <field name="notes" string="Notes"/>
+                        </group>
+                        <group>
+                            <field name="company_id" string="Company ID" options="{&quot;no_create&quot;:true,&quot;no_open&quot;:true}"/>
+                            <field name="location_ids" string="Location IDS" widget="many2many_tags" options="{&quot;no_create&quot;:true}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" options="{'open_attachments': True}"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_stock_card" model="ir.actions.act_window">
+        <field name="name">Stock Card</field>
+        <field name="res_model">stock.card</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_stock_card" name="Stock Card" sequence="10" groups="base.group_user"/>
+
+    <menuitem id="menu_stock_card"
+              name="Stock Card"
+              parent="stock.menu_warehouse_report"
+              action="action_stock_card"
+              sequence="60"/>
+</odoo>
